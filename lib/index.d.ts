@@ -38,14 +38,14 @@ export declare interface ForgetOptions {
 export type TypeDescription = 'memo' | 'forget';
 
 export declare interface DescriptionOption {
-  type: TypeDescription;
+  action: TypeDescription;
   name?: string;
   duration?: number;
   createId: Function;
 }
 
 export declare interface ObjectDescription {
-  [option: string]: DescriptionOption;
+  [option: string]: DescriptionOption | Array<DescriptionOption>;
 }
 
 export declare class RedisMemo {
@@ -58,4 +58,21 @@ export declare class RedisMemo {
   forget(fn, options: ForgetOptions);
 
   fromObject(obj: any, ObjectDescription: ObjectDescription);
+  createObjectMemoizer(description: any);
+}
+
+export declare function memo(
+  createId: Function,
+  duration?: number,
+  name?: string,
+): DescriptionOption;
+
+export declare function forget(
+  name: string,
+  createId?: Function,
+): DescriptionOption;
+
+export declare interface DescriptionActions {
+  memo: (createId: Function, duration?: number, name?: string) => {};
+  forget: (name: string, createId?: Function) => {};
 }

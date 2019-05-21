@@ -1,3 +1,4 @@
-import { RedisMemo } from './lib';
+import { RedisMemo, DescriptionActions } from './lib';
 
-export declare const RedisMemoizer: RedisMemo;
+export declare class RedisMemoizer extends RedisMemo {}
+export declare const descriptionActions: DescriptionActions;

@@ -1,3 +1,3 @@
 const RedisMemoizer = require('./lib').RedisMemo;
-
-module.exports = { RedisMemoizer };
+const descriptionActions = require('./lib/description-actions');
+module.exports = { RedisMemoizer, descriptionActions };

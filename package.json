@@ -1,10 +1,16 @@
 {
-  "name": "@vn/redis-memoizer",
-  "version": "1.0.0",
+  "name": "@victorlizarraga/redis-memoizer",
+  "version": "1.1.2",
   "description": "Redis Memoizer",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "redis": "^2.8.0"
+  },
+  "repository": {
+    "url": "https://github.com/VictorNicolasLO/redis-memoizer"
   },
   "author": "",
   "license": "ISC"
